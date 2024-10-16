@@ -1,0 +1,56 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: { typeName: 'Simple',
+                  typeNamePlural: 'Simples',
+                  title: { type: #STANDARD, label: 'Simple', value: 'SimpleID' } },
+    presentationVariant: [{ sortOrder: [{ by: 'SimpleID', direction: #ASC }] }] }
+@Search.searchable: true
+
+annotate entity ZC_SIMPLE_008
+    with 
+{
+    @UI.facet: [
+        {
+            id:           'Simple',
+            purpose:      #STANDARD,
+            type:         #IDENTIFICATION_REFERENCE,
+            label:        'Simple',
+            position:     10
+        }
+    ]
+
+    @UI.hidden: true
+    SimpleUUID;
+
+    @UI: {  lineItem:       [ { position: 10, label: 'ID', cssDefault.width: '150px' } ],
+            identification: [ { position: 10, label: 'ID'  } ] }
+    @Search.defaultSearchElement: true
+    //@UI.hidden: true
+    SimpleID;
+
+    @UI: {  lineItem:       [ { position: 20, label: 'Field1', cssDefault.width: '150px' } ],
+            identification: [ { position: 20, label: 'Field1'  } ] }
+    //@UI.hidden: true
+    Field1;
+
+    @UI: {  lineItem:       [ { position: 30, label: 'Field2', cssDefault.width: '150px' } ],
+            identification: [ { position: 30, label: 'Field2'  } ] }
+    //@UI.hidden: true
+    Field2;
+    
+    @UI.hidden: true
+    CreatedBy;
+
+    @UI.hidden: true
+    CreatedAt;
+
+    @UI.hidden: true
+    LastChangedBy;
+
+    @UI.hidden: true
+    LastChangedAt;
+
+    @UI.hidden: true
+    LocalLastChangedAt;
+
+}

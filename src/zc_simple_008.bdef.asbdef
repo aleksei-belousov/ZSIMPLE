@@ -1,0 +1,17 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZC_SIMPLE_008 alias Simple
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Prepare;
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+
+}

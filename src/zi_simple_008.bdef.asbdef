@@ -1,0 +1,24 @@
+managed implementation in class zbp_i_simple_008 unique;
+strict ( 2 );
+with draft;
+define behavior for ZI_SIMPLE_008 alias Simple
+persistent table zsimple008
+draft table zsimple008d
+lock master
+total etag LastChangedAt
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly, numbering : managed ) SimpleUUID;
+
+  draft determine action Prepare;
+  draft action Resume with additional implementation;
+  draft action Edit with additional implementation;
+  draft action Activate with additional implementation optimized;
+  draft action Discard /* with additional implementation*/;
+
+}
