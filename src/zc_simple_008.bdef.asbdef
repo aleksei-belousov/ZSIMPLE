@@ -14,4 +14,15 @@ define behavior for ZC_SIMPLE_008 alias Simple
   use action Activate;
   use action Discard;
 
+  use association _Item { create; with draft; }
+
+}
+
+define behavior for ZC_ITEM_008 alias Item
+{
+  use update;
+  use delete;
+
+  use association _Simple { with draft; }
+
 }

@@ -13,6 +13,9 @@ CLASS lhc_simple DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS resume FOR MODIFY
       IMPORTING keys FOR ACTION simple~resume.
 
+    METHODS get_instance_features FOR INSTANCE FEATURES
+      IMPORTING keys REQUEST requested_features FOR simple RESULT result.
+
 ENDCLASS.
 
 CLASS lhc_simple IMPLEMENTATION.
@@ -27,6 +30,9 @@ CLASS lhc_simple IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD resume.
+  ENDMETHOD.
+
+  METHOD get_instance_features.
   ENDMETHOD.
 
 ENDCLASS.

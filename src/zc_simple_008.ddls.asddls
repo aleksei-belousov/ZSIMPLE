@@ -11,5 +11,6 @@ define root view entity ZC_SIMPLE_008 provider contract transactional_query as p
     CreatedAt,
     LastChangedBy,
     LastChangedAt,
-    LocalLastChangedAt
+    LocalLastChangedAt,
+    _Item: redirected to composition child ZC_ITEM_008
 }

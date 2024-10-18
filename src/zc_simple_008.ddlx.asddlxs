@@ -16,7 +16,16 @@ annotate entity ZC_SIMPLE_008
             type:         #IDENTIFICATION_REFERENCE,
             label:        'Simple',
             position:     10
-        }
+        },
+        {
+            hidden:       false,
+            label:        'Item',
+            id:           'ItemID',
+            purpose:      #STANDARD,
+            type:         #LINEITEM_REFERENCE,
+            position:     20,
+            targetElement: '_Item'
+         }
     ]
 
     @UI.hidden: true

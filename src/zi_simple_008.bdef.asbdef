@@ -21,4 +21,22 @@ etag master LocalLastChangedAt
   draft action Activate with additional implementation optimized;
   draft action Discard /* with additional implementation*/;
 
+  association _Item { create ( features : instance, authorization : update ); with draft; }
+
+}
+
+define behavior for ZI_ITEM_008 alias Item
+persistent table zitem008
+draft table zitem008d
+lock dependent by _Simple
+authorization dependent by _Simple
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  field ( readonly, numbering : managed ) ItemUUID;
+  field ( readonly ) SimpleUUID;
+
+  association _Simple { with draft; }
 }
